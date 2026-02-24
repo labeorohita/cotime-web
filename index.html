@@ -82,14 +82,22 @@
       box-shadow: 0 12px 32px rgba(99, 102, 241, 0.35);
     }
 
-    footer {
+   footer {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px 0 40px;
       border-top: 2px solid var(--border-accent);
       font-size: 13px;
       opacity: 0.6;
+      background: #ffffff;
+    }
+
+    /* Safe area support for iOS + modern browsers */
+    @supports (padding: max(0px)) {
+      footer {
+        padding-bottom: max(40px, env(safe-area-inset-bottom));
+      }
     }
 
     footer a {
